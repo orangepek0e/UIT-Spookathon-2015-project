@@ -13,9 +13,17 @@
 		<!-- Title -->
 		<h1>Spookometer</h1> 
 	</div>
+
+	<!-- Its the button! -->
+	<button onclick="myFunction()">Spookify!</button>
+
+	<!-- RNG answer from howSpook -->
+	<p id="spookLevel"></p>
+
 	<script>
 		function howSpook(){
 			Math.floor((Math.random() * 10) );
+			document.getElementById("spookLevel").innerHTML = x;
 		}
 	</script>
 </body>
