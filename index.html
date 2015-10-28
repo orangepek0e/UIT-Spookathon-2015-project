@@ -9,6 +9,25 @@
     <link rel="stylesheet" type='style/css' href="style.css">
 </head>
 <body>
+
+	<div class="header">
+		<!-- Title -->
+		<h1>Spookometer</h1> 
+	</div>
+
+	<!-- Its the button! -->
+	<button onclick="myFunction()">Spookify!</button>
+
+	<!-- RNG answer from howSpook -->
+	<p id="spookLevel"></p>
+
+	<script>
+		function howSpook(){
+			Math.floor((Math.random() * 10) );
+			document.getElementById("spookLevel").innerHTML = x;
+		}
+	</script>
+
     <div class="container" id="background">
         <div class="row">
             <div class="col-md-8">
@@ -23,10 +42,6 @@
         </div>
 
     </div>
-<script>
-    function howSpook(){
-        Math.floor((Math.random() * 10) );
-    }
-</script>
+
 </body>
 </html>
