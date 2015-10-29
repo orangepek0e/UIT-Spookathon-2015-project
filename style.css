@@ -1,6 +1,48 @@
+<<<<<<< HEAD
 #spookButton {
 	border-radius: 50%;
 	background-color: red;
 	margin-right: auto;
 	margin-left: auto;
+=======
+#background{
+    background-color:#252355;
+    background-size:cover;
+    min-width:1024px;
+    min-height:100%;
+    width:100%;
+    height:auto;
+    position:fixed;
+}
+.blinkingLight{
+    width: 75px;
+    height:75px;
+    background-color:white;
+    border-radius:100%;
+    margin-top:24%;
+}
+#redLight{
+    float:right;
+    background-color:#83040A;
+    transition: backgroundColor 3s ease-in-out;
+}
+#greenLight{
+    background-color:#004921;
+    transition: backgroundColor 3s ease-in-out;
+}
+#spookMeter{
+    width:86%;
+    height:500px;
+    border-radius: 40px;
+    background-color:#C3F6C0;
+    border: solid darkorange 1px;
+    margin-top:5%;
+    margin-left:5%;
+    margin-right:5%;
+}
+.btn{
+    display: block;
+    margin: 0 auto;
+    margin-top:5%;
+>>>>>>> master
 }
