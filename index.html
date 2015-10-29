@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <button type="button" onclick="howSpook();" id="spookyButton">Get Spooky!</button>
+                <button type="button" id="spookyButton">Get Spooky!</button>
             </div>
         </div>
 
@@ -45,14 +45,20 @@
 <script>
     var spookLevel = "";
     $("#spookyButton").click(function(){
-        $(".blinkingLight").effect( "pulsate", {times:5}, 3000 );
+        document.getElementById("spookMeter").innerHTML= "<p>Generating level of spook!</p>";
+        $(".blinkingLight").effect( "pulsate", {times:5}, 3000);
         $("#greenLight").css("backgroundColor","green","backgroundColor2", "yellow");
         $("#redLight").css("backgroundColor","red");
-        $(".container").effect( "shake", {times:12}, 3250 );
+        $(".container").effect( "shake", {times:12}, 3250,  function(){
+            howSpook();
+        } );
     });
     function howSpook(){
-        var spookNumber = Math.floor((Math.random() * 10) );
+        var spookNumber = Math.floor((Math.random() * 10) )
         switch(spookNumber) {
+            case 0:
+                spookLevel = "boo!"
+                break;
             case 1:
                 spookLevel = "Pathetic Level of Spook."
                 break;
@@ -62,12 +68,33 @@
             case 3:
                 spookLevel = "Oh lord."
                 break;
+            case 4:
+                spookLevel = "Jesus."
+                break;
+            case 5:
+                spookLevel = "..."
+                break;
+            case 6:
+                spookLevel = "1233"
+                break;
+            case 7:
+                spookLevel = "123"
+                break;
+            case 8:
+                spookLevel = "13213"
+                break;
+            case 9:
+                spookLevel = "12312"
+                break;
+            case 10:
+                spookLevel = "1231232"
+                break;
             default:
                 spookLevel = "*thumbs down*"
                 break;
         }
         console.log(spookLevel);
-        document.getElementById("spookMeter").innerHTML= "<h1>" + spookLevel + "</h1>";
+        document.getElementById("spookMeter").innerHTML= "<p>" + spookLevel + "</p>";
         }
 
 </script>

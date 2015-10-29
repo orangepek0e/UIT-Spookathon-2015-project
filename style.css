@@ -1,3 +1,7 @@
+@font-face{
+    font-family: "Needleteeth Spooky";
+    src: url("/fonts/Needleteeth-Spooky.ttf");
+}
 #background{
     background-color:#252355;
     background-size:cover;
@@ -44,7 +48,9 @@
     border-radius: 100%;
     border:none;
 }
-h1{
+p{
     text-align:center;
-    margin-top:40%;
+    margin-top:30%;
+    font-family: "Needleteeth Spooky";
+    font-size: 100px;
 }
