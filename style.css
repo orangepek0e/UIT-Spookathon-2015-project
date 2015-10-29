@@ -25,16 +25,26 @@
 }
 #spookMeter{
     width:86%;
-    height:500px;
+    height:700px;
     border-radius: 40px;
     background-color:#C3F6C0;
     border: solid darkorange 1px;
     margin-top:5%;
     margin-left:5%;
-    margin-right:5%;
+    margin-right:6%;
 }
-.btn{
+#spookyButton{
     display: block;
     margin: 0 auto;
-    margin-top:5%;
+    margin-top:10%;
+    background: #83040A;
+    box-shadow: -4px 4px 4px 0px rgba(0,0,0,1);
+    width:450px;
+    height:450px;
+    border-radius: 100%;
+    border:none;
+}
+h1{
+    text-align:center;
+    margin-top:40%;
 }

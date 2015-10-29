@@ -11,25 +11,6 @@
     <link rel="stylesheet" type='style/css' href="style.css">
 </head>
 <body>
-
-	<div class="header">
-		<!-- Title -->
-		<h1>Spookometer</h1> 
-	</div>
-
-	<!-- Its the button! -->
-	<button onclick="myFunction()">Spookify!</button>
-
-	<!-- RNG answer from howSpook -->
-	<p id="spookLevel"></p>
-
-	<script>
-		function howSpook(){
-			Math.floor((Math.random() * 10) );
-			document.getElementById("spookLevel").innerHTML = x;
-		}
-	</script>
-
     <div class="container" id="background">
         <div class="row">
             <div class="col-sm-8">
@@ -55,22 +36,22 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <button type="button" onclick="howSpook();" class="btn">Get Spooky!</button>
+                <button type="button" onclick="howSpook();" id="spookyButton">Get Spooky!</button>
             </div>
         </div>
 
 
     </div>
 <script>
-    $("#spookMeter").click(function(){
+    var spookLevel = "";
+    $("#spookyButton").click(function(){
         $(".blinkingLight").effect( "pulsate", {times:5}, 3000 );
         $("#greenLight").css("backgroundColor","green","backgroundColor2", "yellow");
         $("#redLight").css("backgroundColor","red");
-        $("#spookMeter").effect( "shake", {times:12}, 3250 );
+        $(".container").effect( "shake", {times:12}, 3250 );
     });
     function howSpook(){
         var spookNumber = Math.floor((Math.random() * 10) );
-        var spookLevel = "";
         switch(spookNumber) {
             case 1:
                 spookLevel = "Pathetic Level of Spook."
@@ -86,6 +67,7 @@
                 break;
         }
         console.log(spookLevel);
+        document.getElementById("spookMeter").innerHTML= "<h1>" + spookLevel + "</h1>";
         }
 
 </script>
