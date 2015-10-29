@@ -1,3 +1,10 @@
+
+#spookButton {
+	border-radius: 50%;
+	background-color: red;
+	margin-right: auto;
+	margin-left: auto;
+
 @font-face{
     font-family: "Needleteeth Spooky";
     src: url("/fonts/Needleteeth-Spooky.ttf");
@@ -40,6 +47,9 @@
 #spookyButton{
     display: block;
     margin: 0 auto;
+
+    margin-top:5%;
+
     margin-top:10%;
     background: #83040A;
     box-shadow: -4px 4px 4px 0px rgba(0,0,0,1);
@@ -53,4 +63,5 @@ p{
     margin-top:30%;
     font-family: "Needleteeth Spooky";
     font-size: 100px;
+
 }
