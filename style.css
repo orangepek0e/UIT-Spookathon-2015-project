@@ -1,9 +1,10 @@
 
 #spookButton {
-	border-radius: 50%;
-	background-color: red;
-	margin-right: auto;
-	margin-left: auto;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 @font-face{
     font-family: "Needleteeth Spooky";
@@ -64,4 +65,11 @@ p{
     font-family: "Needleteeth Spooky";
     font-size: 100px;
 
+}
+
+.progress {
+    width: 86%;
+    margin-left: 5%;
+    margin-right: 7%;
+    margin-top: 15%;
 }

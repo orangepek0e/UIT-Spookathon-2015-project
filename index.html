@@ -28,13 +28,20 @@
 
                 </div>
             </div>
-
         </div>
+
         <div class="row">
             <div class="col-sm-12" id="spookMeter">
 
             </div>
         </div>
+
+        <div class="progress">
+            <div id="progressAmount" class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow=spookNumber aria-valuemin="0" aria-valuemax="10" style="width:0%;">
+                <!--<span class="sr-only">70% Complete</span>-->
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-sm-12">
                 <button type="button" id="spookyButton">Get Spooky!</button>
@@ -51,12 +58,12 @@
         $("#greenLight").css("backgroundColor","green","backgroundColor2", "yellow");
         $("#redLight").css("backgroundColor","red");
         $(".container").effect( "shake", {times:12}, 3250,  function(){
-            howSpook();git
+            howSpook();
         } );
     });
-    function howSpook(){
-        var spookNumber = Math.floor((Math.random() * 10) )
-        switch(spookNumber) {
+    function howSpook() {
+        var spookNumber = Math.floor((Math.random() * 10))
+        switch (spookNumber) {
             case 0:
                 spookLevel = "boo!"
                 break;
@@ -94,10 +101,15 @@
                 spookLevel = "*thumbs down*"
                 break;
         }
-        console.log(spookLevel);
-        document.getElementById("spookMeter").innerHTML= "<p>" + spookLevel + "</p>";
-        }
+        console.log(spookLevel, spookNumber);
+        var spookValue = spookNumber * 10;
+        console.log(spookValue);
+        var spookVal = spookValue.toString() + '%';
+        console.log(spookVal);
 
+        document.getElementById("progressAmount").style.width = spookVal;
+        document.getElementById("spookMeter").innerHTML = "<p>" + spookLevel + "</p>";
+    }
 </script>
 </body>
 </html>
