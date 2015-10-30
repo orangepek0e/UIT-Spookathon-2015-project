@@ -31,11 +31,14 @@
         </div>
         <div class="row">
             <div class="col-sm-12" id="spookMeter">
-
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
+                <div class="progress">
+                    <div id="progressAmount" class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow=spookNumber aria-valuemin="0" aria-valuemax="10" style="width:0%;">
+                    </div>
+                </div>
                 <button type="button" onclick="playSpookySound();" id="spookyButton"></button>
             </div>
         </div>
@@ -72,6 +75,7 @@
             $("#redLight").effect("explode", 1000);
             $(".container").effect("shake", {times: 20}, 4000);
             $("#spookyButton").effect("explode", 356);
+            $(".progress").effect("explode", 1000);
             document.getElementById("spookMeter").innerHTML= "<p>You've broken the Spook-o-meter. For the sake of humanity: please tone down the spookiness.</p>";
     }
     function playSpookySound(){
@@ -131,7 +135,14 @@
         }
         console.log(spookLevel);
         document.getElementById("spookMeter").innerHTML= "<p>" + spookLevel + "</p>";
+            console.log(spookLevel, spookNumber);
+            var spookValue = spookNumber * 10;
+            console.log(spookValue);
+            var spookVal = spookValue.toString() + '%';
+            console.log(spookVal);
+        document.getElementById("progressAmount").style.width = spookVal;
         }
+
 
 </script>
 </body>

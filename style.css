@@ -32,16 +32,16 @@
     height:676px;
     border-radius: 40px;
     background-color:#C3F6C0;
-    border: solid darkorange 1px;
+    border: none;
     margin-top:4%;
     margin-left:5%;
     margin-right:7%;
+    position:absolute;
 }
 #spookyButton,#spookyButton:focus{
     display: block;
     margin-left:26%;
-    margin-top:11%;
-    /*background: #83040A;*/
+    margin-top:64%;
     background-image: url("/images/1446153977_Halloween-10.svg");
     background-repeat:no-repeat ;
     background-position: center;
@@ -57,4 +57,16 @@ p{
     margin-top:20%;
     font-family: "Needleteeth Spooky";
     font-size: 100px;
+}
+.progress {
+    height:80px;
+    width: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top:10%;
+    border-radius: 100%;
+    background-color:darkorange;
+}
+.progress-bar-danger{
+    background-color:black !important;
 }
