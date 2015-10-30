@@ -18,7 +18,7 @@
                 <!--WTF is going on here? ^^-->
             </div>
             <div class="col-sm-2">
-                <div class="blinkingLight" id="redLight">
+                <div class="blinkingLight" id="redLight" onclick="tooSpooky4u();">
 
                 </div>
             </div>
@@ -36,61 +36,97 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <button type="button" id="spookyButton">Get Spooky!</button>
+                <button type="button" onclick="playSpookySound();" id="spookyButton"></button>
             </div>
         </div>
 
 
     </div>
+    <audio id="player" class="hidden">
+        <source src="/music/Dr.%20Who.mp3" type="audio/mpeg">
+        <source src="/music/Werewolves%20Of%20London.mp3" type="audio/mpeg">
+        <source src="/music/The%20Purple%20People%20Eater.mp3" type="audio/mpeg">
+        <source src="/music/Monster%20Mash.mp3" type="audio/mpeg">
+        <source src="/music/Addams%20Family.mp3" type="audio/mpeg">
+        <source src="/music/Thunder.mp3" type="audio/mpeg">
+    </audio>
 <script>
     var spookLevel = "";
-    $("#spookyButton").click(function(){
-        document.getElementById("spookMeter").innerHTML= "<p>Generating level of spook!</p>";
-        $(".blinkingLight").effect( "pulsate", {times:5}, 3000);
-        $("#greenLight").css("backgroundColor","green","backgroundColor2", "yellow");
-        $("#redLight").css("backgroundColor","red");
-        $(".container").effect( "shake", {times:12}, 3250,  function(){
-            howSpook();git
-        } );
+    $(document).ready(function() {
+        $("#spookyButton").click(function () {
+            document.getElementById("spookMeter").innerHTML = "<p>Generating level of spook!</p>";
+            $(".blinkingLight").effect("pulsate", {times: 5}, 3000);
+            $("#greenLight").css("backgroundColor", "green", "backgroundColor2", "yellow");
+            $("#redLight").css("backgroundColor", "red");
+            $(".container").effect("shake", {times: 12}, 3250, function () {
+                howSpook();
+            });
+        });
     });
+    function tooSpooky4u() {
+            document.getElementById("spookMeter").innerHTML = "<p>Generating level of spook!</p>";
+            $(".blinkingLight").effect("pulsate", {times: 9}, 3000);
+            $("#greenLight").css("backgroundColor", "green");
+            $("#greenLight").effect("explode",1000);
+            $("#redLight").css("backgroundColor", "red");
+            $("#redLight").effect("explode", 1000);
+            $(".container").effect("shake", {times: 20}, 4000);
+            $("#spookyButton").effect("explode", 356);
+            document.getElementById("spookMeter").innerHTML= "<p>You've broken the Spook-o-meter. For the sake of humanity: please tone down the spookiness.</p>";
+    }
+    function playSpookySound(){
+        var sounds = [
+            "/music/Thunder.mp3",
+            "/music/Addams%20Family.mp3",
+            "/music/Monster%20Mash.mp3",
+            "/music/The%20Purple%20People%20Eater.mp3",
+            "/music/Werewolves%20Of%20London.mp3",
+            "/music/Dr.%20Who.mp3"];
+
+        var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
+        console.log(soundFile);
+        var audio = new Audio(soundFile)
+        audio.play();
+//        document.getElementById("player").innerHTML="<embed src=\""+soundFile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+    }
     function howSpook(){
         var spookNumber = Math.floor((Math.random() * 10) )
         switch(spookNumber) {
             case 0:
-                spookLevel = "boo!"
+                spookLevel = "The Care Bears are scarier than this situation."
                 break;
             case 1:
-                spookLevel = "Pathetic Level of Spook."
+                spookLevel = "Are you even trying to be spooky?"
                 break;
             case 2:
-                spookLevel = "Meh."
+                spookLevel = "Step your spook game up, m8."
                 break;
             case 3:
-                spookLevel = "Oh lord."
+                spookLevel = "You've made an attempt."
                 break;
             case 4:
                 spookLevel = "Jesus."
                 break;
             case 5:
-                spookLevel = "..."
+                spookLevel = "Adam Sandler's acting career."
                 break;
             case 6:
-                spookLevel = "1233"
+                spookLevel = "Spooky Scary Skeletons sending shivers down my spine."
                 break;
             case 7:
-                spookLevel = "123"
+                spookLevel = "Loading your saved file to find it's corrupted."
                 break;
             case 8:
-                spookLevel = "13213"
+                spookLevel = "Spending a night at Camp Crystal Lake on Friday the 13th."
                 break;
             case 9:
-                spookLevel = "12312"
+                spookLevel = "2spoopy4me"
                 break;
             case 10:
-                spookLevel = "1231232"
+                spookLevel = "Jar-Jar Binks' starring role in Episode VII."
                 break;
             default:
-                spookLevel = "*thumbs down*"
+                spookLevel ="You've broken the Spook-o-meter. For the sake of humanity: please tone down the spookiness."
                 break;
         }
         console.log(spookLevel);
